@@ -1,6 +1,14 @@
-import { Twitter, Linkedin, Github, MapPin, Mail } from "lucide-react";
+import { Share2, Briefcase, Code, MapPin, Mail, MessageCircle } from "lucide-react";
 
 export function Footer({ t }) {
+  const connectLabels = t("footer_links_connect");
+  const connectLinks = [
+    { href: "https://instagram.com/baho_hi", label: connectLabels[0], Icon: Share2 },
+    { href: "https://facebook.com/baho_hi", label: connectLabels[1], Icon: Briefcase },
+    { href: "https://wa.me/250796848781", label: connectLabels[2], Icon: MessageCircle },
+    { href: "https://github.com/Felicien407/baho-health-landing", label: connectLabels[3], Icon: Code },
+  ];
+
   return (
     <footer className="site-footer">
       <div className="footer-top">
@@ -29,8 +37,10 @@ export function Footer({ t }) {
           <div>
             <h3>{t("footer_connect")}</h3>
             <ul>
-              {t("footer_links_connect").map((item) => (
-                <li key={item}><a href="#">{item}</a></li>
+              {connectLinks.map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} target="_blank" rel="noreferrer">{item.label}</a>
+                </li>
               ))}
             </ul>
           </div>
@@ -47,9 +57,11 @@ export function Footer({ t }) {
           <span>bahohealthintelligence@gmail.com</span>
         </div>
         <div className="footer-socials">
-          <a href="#" aria-label="Twitter"><Twitter size={16} /></a>
-          <a href="#" aria-label="LinkedIn"><Linkedin size={16} /></a>
-          <a href="#" aria-label="GitHub"><Github size={16} /></a>
+          {connectLinks.map(({ href, label, Icon }) => (
+            <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label}>
+              <Icon size={16} />
+            </a>
+          ))}
         </div>
       </div>
 
