@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Globe, ChevronRight } from "lucide-react";
+import logo from "../../assets/icon.svg";
 import { Button } from "../ui/Button";
 
 const navItems = [
@@ -23,8 +24,7 @@ export function Navbar({ t, language, supported, switchLanguage }) {
     <header className={scrolled ? "navbar navbar-sticky" : "navbar"}>
       <div className="navbar-inner">
         <a href="#hero" className="brand-link" aria-label="Baho Health Intelligence home">
-          <span className="brand-mark" aria-hidden="true">BH</span>
-          <span className="brand-text">Baho HI</span>
+          <img src={logo} alt="Baho Health Intelligence" className="brand-logo" />
         </a>
 
         <nav className="nav-links" aria-label="Primary navigation">

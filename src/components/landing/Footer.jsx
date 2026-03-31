@@ -1,4 +1,5 @@
 import { Share2, Briefcase, Code, MapPin, Mail, MessageCircle } from "lucide-react";
+import logo from "../../assets/icon.svg";
 
 export function Footer({ t }) {
   const connectLabels = t("footer_links_connect");
@@ -13,7 +14,7 @@ export function Footer({ t }) {
     <footer className="site-footer">
       <div className="footer-top">
         <div>
-          <span className="brand-mark-footer">BH</span>
+          <img src={logo} alt="Baho Health Intelligence" className="brand-logo-footer" />
           <p className="footer-tagline">{t("footer_tagline")}</p>
         </div>
 
