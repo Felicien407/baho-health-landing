@@ -32,7 +32,12 @@ function PartnerSection({ t }) {
         <span className="section-badge">{t("partner_badge")}</span>
         <h2>{t("partner_h")}</h2>
         <p>{t("partner_sub")}</p>
-        <a className="btn btn-primary" href="mailto:contact@bahohealth.com">
+        <a
+          className="btn btn-primary"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSf6kk1FDw7ynLCF0a56N41l6pToK_3h3W1BgbbeIs3LWajl7w/viewform?usp=header"
+          target="_blank"
+          rel="noreferrer"
+        >
           {t("partner_cta")}
         </a>
       </div>
