@@ -3,47 +3,47 @@ import { Brain, Activity, TrendingUp, ShieldCheck, WifiOff, MapPin, ChevronDown 
 import { GlassCard } from "../ui/GlassCard";
 import { Button } from "../ui/Button";
 
-const featureItems = [
-  {
-    icon: Brain,
-    title: "AI Symptom Checker",
-    description: "Natural language triage that routes patients to the right level of care.",
-    tag: "Patient · NLP",
-  },
-  {
-    icon: Activity,
-    title: "Disease Monitoring",
-    description: "Live aggregation of anonymized health signals across Rwanda.",
-    tag: "Population · Live",
-  },
-  {
-    icon: TrendingUp,
-    title: "Outbreak Prediction",
-    description: "Early alerts for health authorities before cases peak.",
-    tag: "Intelligence · Alerts",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Doctor-in-the-Loop",
-    description: "Critical flags are reviewed by clinicians before action is taken.",
-    tag: "Trust · Safety",
-  },
-  {
-    icon: WifiOff,
-    title: "Offline Mode",
-    description: "Works in rural settings with intermittent connectivity.",
-    tag: "Accessibility · Rural",
-  },
-  {
-    icon: MapPin,
-    title: "Medication Tracking",
-    description: "Improves adherence through reminders and pharmacy integration.",
-    tag: "Patient · Adherence",
-  },
-];
-
 export function Ecosystem({ t }) {
   const [expanded, setExpanded] = useState(null);
+
+  const featureItems = [
+    {
+      icon: Brain,
+      titleKey: "feature_1_title",
+      descriptionKey: "feature_1_description",
+      tagKey: "feature_1_tag",
+    },
+    {
+      icon: Activity,
+      titleKey: "feature_2_title",
+      descriptionKey: "feature_2_description",
+      tagKey: "feature_2_tag",
+    },
+    {
+      icon: TrendingUp,
+      titleKey: "feature_3_title",
+      descriptionKey: "feature_3_description",
+      tagKey: "feature_3_tag",
+    },
+    {
+      icon: ShieldCheck,
+      titleKey: "feature_4_title",
+      descriptionKey: "feature_4_description",
+      tagKey: "feature_4_tag",
+    },
+    {
+      icon: WifiOff,
+      titleKey: "feature_5_title",
+      descriptionKey: "feature_5_description",
+      tagKey: "feature_5_tag",
+    },
+    {
+      icon: MapPin,
+      titleKey: "feature_6_title",
+      descriptionKey: "feature_6_description",
+      tagKey: "feature_6_tag",
+    },
+  ];
 
   return (
     <section id="ecosystem" className="section-block">
@@ -57,17 +57,20 @@ export function Ecosystem({ t }) {
         {featureItems.map((item, index) => {
           const Icon = item.icon;
           const isOpen = expanded === index;
+          const title = t(item.titleKey);
+          const description = t(item.descriptionKey);
+          const tag = t(item.tagKey);
           return (
-            <GlassCard key={item.title} className="feature-card">
+            <GlassCard key={item.titleKey} className="feature-card">
               <div className="feature-icon">
                 <Icon size={20} />
               </div>
               <div>
-                <h3>{item.title}</h3>
-                <p>{isOpen ? item.description : `${item.description.slice(0, 60)}...`}</p>
+                <h3>{title}</h3>
+                <p>{isOpen ? description : `${description.slice(0, 60)}...`}</p>
               </div>
               <div className="feature-footer">
-                <span>{item.tag}</span>
+                <span>{tag}</span>
                 <Button variant="secondary" className="feature-toggle" onClick={() => setExpanded(isOpen ? null : index)}>
                   {isOpen ? "Collapse" : t("eco_readmore")} <ChevronDown size={14} />
                 </Button>
