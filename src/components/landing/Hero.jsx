@@ -39,11 +39,11 @@ export function Hero({ t }) {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="hero-card-top">
-              <span className="hero-card-pill">Live analysis</span>
+              <span className="hero-card-pill">{t("hero_live_analysis")}</span>
               <HeartPulse size={18} />
             </div>
             <div className="hero-card-stat">2.4M</div>
-            <p className="hero-card-footer">Daily insights processed across Rwanda.</p>
+            <p className="hero-card-footer">{t("hero_daily_insights")}</p>
           </motion.div>
         </div>
       </div>
