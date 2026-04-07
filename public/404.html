@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page not found · Baho Health Intelligence</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --health: #166534;
+        --health-dark: #14532d;
+        --slate: #0f172a;
+        --muted: #64748b;
+        --bg: #f8fafc;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "DM Sans", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--slate);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      p {
+        margin: 0;
+        max-width: 28rem;
+        line-height: 1.6;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+      h1 {
+        margin: 0 0 0.75rem;
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      .code {
+        display: inline-block;
+        margin-bottom: 1.25rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--health);
+      }
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1.75rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        background: linear-gradient(180deg, var(--health) 0%, var(--health-dark) 100%);
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+      }
+      a:focus-visible {
+        outline: 2px solid var(--health);
+        outline-offset: 2px;
+      }
+      a:hover {
+        filter: brightness(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <span class="code">404</span>
+    <h1>This page does not exist</h1>
+    <p>
+      The link may be broken or the page was removed. Return to the Baho Health Intelligence
+      home page to continue.
+    </p>
+    <a href="/">Back to home</a>
+  </body>
+</html>
