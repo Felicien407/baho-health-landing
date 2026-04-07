@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-white font-sans text-slate-800 antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+/* Italic subtitles: section intros and hero supporting copy */
+@layer components {
+  .text-subtitle {
+    @apply text-pretty text-lg font-normal italic leading-[1.65] tracking-[0.01em] text-slate-600;
+  }
+
+  .text-subtitle-lg {
+    @apply text-pretty text-lg font-normal italic leading-[1.65] tracking-[0.01em] text-slate-600 sm:text-xl;
+  }
+
+  .text-subtitle-on-dark {
+    @apply text-pretty text-lg font-normal italic leading-[1.65] tracking-[0.015em] text-emerald-200/90;
+  }
+
+  .text-subtitle-brand {
+    @apply text-pretty text-lg font-normal italic leading-[1.65] tracking-[0.015em] text-health-100/95;
+  }
+
+  .text-subtitle-muted {
+    @apply text-pretty text-sm font-normal italic leading-relaxed tracking-wide text-slate-500;
+  }
+
+  .heading-section {
+    @apply text-balance font-bold uppercase tracking-[0.07em] text-slate-900;
+  }
+
+  .heading-hero {
+    @apply text-balance font-extrabold uppercase tracking-[0.04em] text-slate-900;
+  }
+
+  /* Hero cycling headline: smooth reveal (respect prefers-reduced-motion below) */
+  .hero-headline-enter {
+    animation: hero-headline-enter 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes hero-headline-enter {
+    from {
+      opacity: 0;
+      transform: translateY(0.4em);
+      filter: blur(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-headline-enter {
+    animation: none !important;
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
